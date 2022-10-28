@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    height: 80px;
+    background-color: #fff;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    left: 0;
+  }
+  
+  .logo {
+    width: 60px;
+  }
+  
+  .logoWpp {
+    width: 25px;
+    margin-right: 10px;
+  }
+  
+  .contato {
+    font-size: 25px;
+    font-weight: bold;
+    color: #366ff3;
+  }
