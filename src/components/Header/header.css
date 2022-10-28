@@ -26,3 +26,19 @@ header {
     font-weight: bold;
     color: #366ff3;
   }
+
+  @media only screen and (max-device-width: 900px) {
+    h1 {
+      font-size: 20px;
+    }
+
+    .contato {
+      font-size: 8px;
+    }
+
+    .logo {
+      width: 30px;
+    }
+    }
+
+  

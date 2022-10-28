@@ -131,4 +131,18 @@ button:hover {
     padding: 30px;
     margin: 100px auto;
     display:block;
-  }
+}
+
+@media only screen and (max-device-width: 900px) {
+    .card-form {
+        width: 100%;
+    }
+
+    .card-form h1 {
+        font-size: 1.9rem;
+    }
+
+    .section-card {
+       width: 100%;
+    }
+}

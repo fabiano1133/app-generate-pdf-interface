@@ -1,5 +1,6 @@
 import React from 'react'
 import logoWpp from "../../../src/assets/images/wppLogo.svg";
+import './logoWhatsapp.css';
 
 export default function LogoWhatsapp() {
     return (
