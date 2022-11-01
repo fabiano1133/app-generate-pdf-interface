@@ -8,8 +8,7 @@ export default function Header() {
         
         <header className="header">
             <Logo />
-            <h1>Gerador de Contratos</h1>
-            <span className='contato'><LogoWhatsapp/>(92) 98460-0010</span>
+            <h1>Gerador de Contratos</h1>    
         </header>
     )
 }
