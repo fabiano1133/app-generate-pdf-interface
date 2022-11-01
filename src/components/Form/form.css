@@ -136,6 +136,12 @@ button:hover {
 @media only screen and (max-device-width: 900px) {
     .card-form {
         width: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+
+        padding: 10px 10px;
+
     }
 
     .card-form h1 {
@@ -143,6 +149,6 @@ button:hover {
     }
 
     .section-card {
-       width: 100%;
-    }
+        width: 100%;
+     }
 }
