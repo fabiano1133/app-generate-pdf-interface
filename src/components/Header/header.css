@@ -17,7 +17,12 @@ header {
   }
   
   .logo {
-    width: 60px;
+    width: 70px;
+  }
+
+  .header-logo {
+    margin-top: 20px;
+    width: 580px;
   }
   
   .logoWpp {
@@ -31,22 +36,17 @@ header {
     color: #366ff3;
   }
 
-  @media only screen and (max-device-width: 900px) {
-    h1 {
-      font-size: 20px;
-    }
-
-    .contato {
-      font-size: 8px;
-    }
-
+  @media only screen and ( max-device-width: 896px) {
     .logo {
-      width: 30px;
+      width: 50px;
     }
 
-    .header h1 {
-      font-size: 1.5rem;
-      padding: 10px;
+    .header-logo {
+      width: 360px;
+    }
+
+    header {
+      padding-left: 60px; 
     }
   }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import  Logo  from '../LogoHeader/Logo';
-import LogoWhatsapp from '../LogoWhatsapp/LogoWhatsapp';
+import logo from '../../assets/images/header-logo.svg';
 import './header.css';
 
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
         
         <header className="header">
             <Logo />
-            <h1>Gerador de Contratos</h1>    
+              <img className="header-logo" src={logo} alt="header-logo"></img>   
         </header>
     )
 }
