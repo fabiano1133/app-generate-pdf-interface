@@ -60,13 +60,15 @@ export default function Form() {
 
     const [ message, setmessage ] = useState('')
     const [ messageError, setMessageError ] = useState('')
+    const [baixarPdf, setBaixarPdf] = useState('')
 
     const {register, handleSubmit, formState: { errors }} = useForm({
         resolver: yupResolver(validationFields)
     });
 
     const sendData = async data => api.post('/pdf', data).then((response) => {
-        setmessage(response.data.message)
+        setmessage(response.data)
+        setBaixarPdf('Baixar PDF')
     }).catch((error) => {
         if(error) {
             setMessageError(error.message)
@@ -506,7 +508,7 @@ export default function Form() {
                     </div>
 
                     <div className='messageSuccess'>
-                        <p>{message}</p>
+                        <a href={message}>{baixarPdf}</a> 
                     </div>
 
                     <div className='messageError'>
