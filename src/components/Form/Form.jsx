@@ -77,6 +77,7 @@ export default function Form() {
     
     return (
        <main>
+        <head><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /></head>
         <div className='card-form'>
             <h1>Preencha todos os dados</h1>
             <div className='line-form'></div>
