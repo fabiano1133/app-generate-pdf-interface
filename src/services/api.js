@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://deply.fabiano-development.tech',
+    baseURL: 'https://deply.fabiano-development.tech/',
     headers: { 
         'Content-Type': 'application/pdf', 
         'Accept': 'application/pdf', 
