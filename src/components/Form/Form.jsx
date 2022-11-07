@@ -8,6 +8,7 @@ import * as yup from 'yup'
 
 import './form.css'
 import LoadingSpinner from '../Spinner/Spinner'
+import axios from 'axios'
 
 const validationFields = yup.object().shape({
     objContrato: yup.string().required('Este campo é obrigatório'),
@@ -64,7 +65,7 @@ export default function Form() {
     const [baixarPdf, setBaixarPdf] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const {register, handleSubmit, formState: { errors }} = useForm({
+    const {register, handleSubmit, setValue, setFocus, formState: { errors }} = useForm({
         resolver: yupResolver(validationFields)
     });
 
@@ -77,14 +78,49 @@ export default function Form() {
         }
     })
 
+
     const handleLoading = () => {
         setLoading(true)
         setMessageError('')
         setTimeout(() => {
             setLoading(false)
-        }, 2000)
+        }, 5000)
     }
 
+    const getCepObjeto = (e) => {
+        const cep = e.target.value
+        axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => {
+            setValue('ufObjeto', response.data.uf)
+            setValue('endObjeto', response.data.logradouro)
+            setValue('bairroObjeto', response.data.bairro)
+            setValue('cidadeObjeto', response.data.localidade)
+            setFocus('numObjeto')
+        })
+    }
+
+    const getCepLocador = (e) => {
+        const cep = e.target.value
+        axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => {
+            setValue('ufLocador', response.data.uf)
+            setValue('ruaLocador', response.data.logradouro)
+            setValue('bairroLocador', response.data.bairro)
+            setValue('cidadeLocador', response.data.localidade)
+    })
+}
+
+const getCepLocatario = (e) => {
+    const cep = e.target.value
+    axios.get(`https://viacep.com.br/ws/${cep}/json/`)
+    .then((response) => {
+        setValue('ufLocatario', response.data.uf)
+            setValue('ruaLocatario', response.data.logradouro)
+            setValue('bairroLocatario', response.data.bairro)
+            setValue('cidadeLocatario', response.data.localidade)
+})
+
+}
     return (
        <main>
         <div className='card-form'>
@@ -103,10 +139,20 @@ export default function Form() {
                     </div>
 
                     <div className='fields'>
-                        <label>Finalidade (Ex: Comercial ou Residencial) *</label>
-                        <input className='card-input' name='finalidade' {...register('finalidade', {required: true})}></input>
+                        <label>Finalidade *</label>
+                        <select className='card-input' name='finalidade' {...register('finalidade', {required: true})}>
+                            <option value="" disabled selected>Escolha uma opção</option>
+                            <option value="comercial">Comercial</option>
+                            <option value="residencial">Residencial</option>
+                        </select>
                         <p className='error-message'>{errors.finalidade?.message}</p>
                     </div>
+
+                    <div className='fields'>
+                        <label>CEP *</label>
+                        <InputMask className='card-input' mask='99999-999' name='cepObjeto' {...register('cepObjeto', {required: true})} onBlur={getCepObjeto}></InputMask>
+                        <p className='error-message'>{errors.cepObjeto?.message}</p>
+                    </div>                 
 
                     <div className='fields'>
                         <label>Endereço *</label>
@@ -134,15 +180,10 @@ export default function Form() {
 
                     <div className='fields'>
                         <label>UF *</label>
-                        <input className='card-input' type='text' name='cidadeObjeto' {...register('ufObjeto', {required: true})} />
+                        <input className='card-input' type='text' name='ufObjeto' {...register('ufObjeto', {required: true})} />
                         <p className='error-message'>{errors.cidadeObjeto?.message}</p>
                     </div>
 
-                    <div className='fields'>
-                        <label>CEP *</label>
-                        <InputMask className='card-input' mask='99999-999' name='cepObjeto' {...register('cepObjeto', {required: true})}></InputMask>
-                        <p className='error-message'>{errors.cepObjeto?.message}</p>
-                    </div>                 
                 </div>
 
                     <div className='section-card'>
@@ -196,6 +237,11 @@ export default function Form() {
                         <p className='error-message'>{errors.ufExpedicao?.message}</p>
                     </div>
 
+                    <div className='fields'>
+                        <label>CEP *</label>
+                        <InputMask mask='99999-999' className='card-input' name='cepLocador' {...register('cepLocador', {required: true})} onBlur={getCepLocador}></InputMask>
+                        <p className='error-message'>{errors.cepLocador?.message}</p>
+                    </div>
 
                     <div className='fields'>
                         <label>Endereço *</label>
@@ -233,11 +279,6 @@ export default function Form() {
                         <p className='error-message'>{errors.ufLocador?.message}</p>
                     </div>
 
-                    <div className='fields'>
-                        <label>CEP *</label>
-                        <InputMask mask='99999-999' className='card-input' name='cepLocador' {...register('cepLocador', {required: true})}></InputMask>
-                        <p className='error-message'>{errors.cepLocador?.message}</p>
-                    </div>
 
                     </div>
 
@@ -286,6 +327,12 @@ export default function Form() {
                     </div>
 
                     <div className='fields'>
+                        <label>CEP *</label>
+                        <InputMask mask='99999-999' className='card-input' name='cepLocatario' {...register('cepLocatario', {required: true})} onBlur={getCepLocatario}></InputMask>
+                        <p className='error-message'>{errors.cepLocatario?.message}</p>
+                    </div>
+
+                    <div className='fields'>
                         <label>Endereço *</label>
                         <input className='card-input' name='ruaLocatario' {...register('ruaLocatario', {required: true})}></input>
                         <p className='error-message'>{errors.ruaLocatario?.message}</p>
@@ -321,11 +368,6 @@ export default function Form() {
                         <p className='error-message'>{errors.ufLocatario?.message}</p>
                     </div>
 
-                    <div className='fields'>
-                        <label>CEP *</label>
-                        <InputMask mask='99999-999' className='card-input' name='cepLocatario' {...register('cepLocatario', {required: true})}></InputMask>
-                        <p className='error-message'>{errors.cepLocatario?.message}</p>
-                    </div>
                     
                     </div>
 
@@ -518,7 +560,7 @@ export default function Form() {
                     </div>
 
                     <div className='messageSuccess'>
-                        <a href={message}>{baixarPdf}</a> 
+                        <a href={message}>{baixarPdf}</a>
                     </div>
 
                     <div>
