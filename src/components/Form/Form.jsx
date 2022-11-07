@@ -581,8 +581,9 @@ const getCepLocatario = (e) => {
                     <div className='pix-container'>
                     <a className='pix' href="https://nubank.com.br/pagar/n824k/uqkAAKHBp4">Faça uma doação ao projeto</a> 
                     </div>
-                    
+    
                 </form>
+                
             </div>
         </div>
        </main>
