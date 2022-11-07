@@ -7,6 +7,7 @@ import InputMask from "react-input-mask";
 import * as yup from 'yup'
 
 import './form.css'
+import LoadingSpinner from '../Spinner/Spinner'
 
 const validationFields = yup.object().shape({
     objContrato: yup.string().required('Este campo é obrigatório'),
@@ -61,6 +62,7 @@ export default function Form() {
     const [ message, setmessage ] = useState('')
     const [ messageError, setMessageError ] = useState('')
     const [baixarPdf, setBaixarPdf] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const {register, handleSubmit, formState: { errors }} = useForm({
         resolver: yupResolver(validationFields)
@@ -71,10 +73,18 @@ export default function Form() {
         setBaixarPdf('Baixar PDF')
     }).catch((error) => {
         if(error) {
-            setMessageError(error.message)
+            setMessageError(`Ops...Algo deu errado : ${error.message}`)
         }
     })
-    
+
+    const handleLoading = () => {
+        setLoading(true)
+        setMessageError('')
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000)
+    }
+
     return (
        <main>
         <div className='card-form'>
@@ -399,7 +409,7 @@ export default function Form() {
 
                     <div className='fields'>
                         <label>CPF *</label>
-                        <input className='card-input' type='text' name='cpfCorretor' {...register('cpfCorretor', {required: true})} />
+                        <InputMask className='card-input' mask='999.999.999-99' type='text' name='cpfCorretor' {...register('cpfCorretor', {required: true})} />
                         <p className='error-message'>{errors.campo?.message}</p>
                     </div>
 
@@ -441,7 +451,7 @@ export default function Form() {
 
                     <div className='fields'>
                         <label>CEP *</label>
-                        <input className='card-input' type='text' name='cepCorretor' {...register('cepCorretor', {required: true})} />
+                        <InputMask className='card-input' mask='99999-999' type='text' name='cepCorretor' {...register('cepCorretor', {required: true})} />
                         <p className='error-message'>{errors.campo?.message}</p>
                     </div>
 
@@ -504,11 +514,15 @@ export default function Form() {
 
 
                     <div className='btn-generate'>
-                        <button type='submit'>GERAR CONTRATO</button>
+                        <button onClick={handleLoading} type='submit'>GERAR CONTRATO</button>
                     </div>
 
                     <div className='messageSuccess'>
                         <a href={message}>{baixarPdf}</a> 
+                    </div>
+
+                    <div>
+                        {loading ? <LoadingSpinner /> : sendData}
                     </div>
 
                     <div className='messageError'>
