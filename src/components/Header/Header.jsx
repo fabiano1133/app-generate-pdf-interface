@@ -8,7 +8,7 @@ export default function Header() {
         
         <header className="header">
             <Logo />
-              <img className="header-logo" src={logo} alt="header-logo"></img>   
+              <img className="header-logo" src={logo} alt="header-logo"></img> 
         </header>
     )
 }

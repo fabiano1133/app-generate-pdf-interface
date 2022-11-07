@@ -56,6 +56,7 @@ const validationFields = yup.object().shape({
     valorGarantiaCaucao: yup.string().required('Este campo é obrigatório'),
     diaVencimento: yup.string().required('Este campo é obrigatório'),
     ciaEletrica: yup.string().required('Este campo é obrigatório'),
+    nacionalidadeLocatario: yup.string().required('Este campo é obrigatório'),
 })
 
 export default function Form() {
@@ -288,6 +289,12 @@ const getCepLocatario = (e) => {
                         <label>Nome *</label>
                         <input className='card-input' type='text' name='locatario' {...register('locatario', {required: true})} />
                         <p className='error-message'>{errors.locatario?.message}</p>
+                    </div>
+
+                    <div className='fields'>
+                        <label>Nacionalidade *</label>
+                        <input className='card-input' type='text' name='nacionalidadeLocatario' {...register('nacionalidadeLocatario', {required: true})} />
+                        <p className='error-message'>{errors.nacionalidadeLocatario?.message}</p>
                     </div>
 
                     <div className='fields'>
@@ -569,6 +576,10 @@ const getCepLocatario = (e) => {
 
                     <div className='messageError'>
                         <p>{messageError}</p>
+                    </div>
+
+                    <div className='pix-container'>
+                    <a className='pix' href="https://nubank.com.br/pagar/n824k/uqkAAKHBp4">Faça uma doação ao projeto</a> 
                     </div>
                     
                 </form>
