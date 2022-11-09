@@ -567,7 +567,7 @@ const getCepLocatario = (e) => {
                     </div>
 
                     <div className='messageSuccess'>
-                        <a href={message}>{baixarPdf}</a>
+                        <a href={message} target="_blank" rel="noopener noreferrer">{baixarPdf}</a>
                     </div>
 
                     <div>
@@ -579,7 +579,7 @@ const getCepLocatario = (e) => {
                     </div>
 
                     <div className='pix-container'>
-                    <a className='pix' href="https://nubank.com.br/pagar/n824k/uqkAAKHBp4">Faça uma doação ao projeto</a> 
+                    <a className='pix' href="https://nubank.com.br/pagar/n824k/r8sPdJK5DA">Faça uma doação ao projeto</a> 
                     </div>
     
                 </form>
