@@ -2,13 +2,15 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import Footer from './components/Footer/Footer';
 import './App.css';
+import { Home } from './components/Home/home';
 
 function App() {
   
   return (
     <div>
       <Header />
-      <Form/>
+      <Home/>
+      {/* <Form/> */}
     <Footer/>
     </div>
   );
