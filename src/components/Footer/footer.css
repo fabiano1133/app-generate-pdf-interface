@@ -27,12 +27,13 @@
     padding-top: 18px;
     display: flex;
     justify-content: center;
-    color: rgba(195, 195, 195, 0.441);
+    color: rgba(255, 240, 240, 0.441);
   }
 
   .copyright a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgba(195, 195, 195, 0.441);
+    color: rgba(235, 235, 235, 0.441);
     margin-left: 8px;
+    text-decoration: none;
 
   }

@@ -9,6 +9,8 @@ import * as yup from 'yup'
 import './form.css'
 import LoadingSpinner from '../Spinner/Spinner'
 import axios from 'axios'
+import Header from '../Header/Header'
+
 
 const validationFields = yup.object().shape({
     objContrato: yup.string().required('Este campo é obrigatório'),
@@ -124,6 +126,7 @@ const getCepLocatario = (e) => {
 }
     return (
        <main>
+        <Header/>
         <div className='card-form'>
             <h1>Preencha todos os dados</h1>
             <div className='line-form'></div>
@@ -583,9 +586,9 @@ const getCepLocatario = (e) => {
                     </div>
     
                 </form>
-                
             </div>
         </div>
        </main>
+
     )
 }

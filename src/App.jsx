@@ -1,19 +1,19 @@
-import Header from './components/Header/Header';
-import Form from './components/Form/Form';
-import Footer from './components/Footer/Footer';
-import './App.css';
-import { Home } from './components/Home/home';
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
 
-function App() {
-  
+import { Home } from '../src/components/Home/home'
+import Form from '../src/components/Form/Form.jsx'
+import Footer from './components/Footer/Footer'
+
+export default function App() {
   return (
-    <div>
-      <Header />
-      <Home/>
-      {/* <Form/> */}
+    <>
+      <Routes>
+      <Route index element={<Home />} />
+      <Route path="/form" element={<Form />} />
+    </Routes>
     <Footer/>
-    </div>
-  );
+    </>
+    
+  )
 }
-
-export default App;
