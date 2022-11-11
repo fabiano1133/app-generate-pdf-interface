@@ -1,0 +1,152 @@
+.container {
+    margin-top: 30px;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 12px;
+    background-color: rgb(63, 153, 249);
+}
+
+.title {
+    margin-top: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.subTitle {
+    font-size: 1.9rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: rgb(10, 0, 198);
+}
+
+.card-options {
+    background-color: rgba(84, 121, 255, 0.393);
+    width: 50%;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 40px;
+    height: 50vh;
+}
+
+.card-options h2 {
+    font-size: 1rem;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.btn-option {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #0000CD;
+    text-decoration: none;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-device-width: 900px) {
+    .container {
+        margin-top: 30px;
+        width: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 12px;
+        background-color: rgb(63, 153, 249);
+    }
+
+    .title {
+        margin-top: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .subTitle {
+        font-size: 1.2rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        color: rgb(10, 0, 198);
+    }
+
+    .card-options {
+        background-color: rgba(84, 121, 255, 0.393);
+        width: 100%;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 40px;
+        height: 56vh;
+    }
+
+    .card-options h2 {
+        font-size: 1rem;
+        text-align: center;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #fff;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .btn-option {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        padding: 20px;
+        font-size: 1rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        margin: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #0000CD;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
