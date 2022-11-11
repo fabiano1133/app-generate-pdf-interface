@@ -1,5 +1,5 @@
 import React from "react";
-import "./desktop.css";
+import "./style.css";
 import { NavLink } from "react-router-dom";
 export function Home() {
   return (
@@ -20,7 +20,7 @@ export function Home() {
               <NavLink to="/form" className="btn-option">
                 ALUGUEL COM CAUÇÃO
               </NavLink>
-              <button className="btn-option">COMPRA E VENDA</button>
+              <NavLink className="btn-option">COMPRA E VENDA</NavLink>
             </div>
           </div>
         </div>
