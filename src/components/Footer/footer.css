@@ -3,7 +3,7 @@
     height: 120px;
     background-color: #3333FF;
     padding: 20px;
-    
+    position: absolute;
     bottom:0;
     left: 0;
   }

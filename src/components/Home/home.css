@@ -10,6 +10,7 @@
     }
 
     .title {
+        margin-top: 40px;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1.5rem;
         text-align: center;
@@ -28,9 +29,9 @@
     .card-options {
         background-color: rgba(84, 121, 255, 0.393);
         width: 100%;
-        height: 57vh;
         border-radius: 10px;
         padding: 20px;
+        margin-top: 40px;
     }
 
     .card-options h2 {
