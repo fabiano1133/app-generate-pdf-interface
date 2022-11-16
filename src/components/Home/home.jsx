@@ -6,7 +6,7 @@ export function Home() {
     <>
       <div className="container">
         <div className="container">
-          <h1 className="title">Seja bem vindo!</h1>
+          <h1 className="title">Seja bem vindo</h1>
           <h2 className="subTitle">Gere contratos de forma simples</h2>
         </div>
 
