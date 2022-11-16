@@ -1,9 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "../src/components/Home/home";
-import Form from "../src/components/Form/Form.jsx";
+import { Home } from "./components/Home/Home";
+import FormCaucao from "../src/components/Form-Caucao/Form-caucao.jsx";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import FormFiador from "./components/Form-Fiador/Form-fiador";
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/form-caucao" element={<FormCaucao />} />
+        <Route path="/form-fiador" element={<FormFiador />} />
       </Routes>
       <Footer />
     </>

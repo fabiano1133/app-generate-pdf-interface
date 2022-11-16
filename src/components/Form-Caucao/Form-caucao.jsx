@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputMask from "react-input-mask";
 import * as yup from "yup";
 
-import "./form.css";
+import "./style.css";
 import LoadingSpinner from "../Spinner/Spinner";
 import axios from "axios";
 
@@ -59,7 +59,7 @@ const validationFields = yup.object().shape({
   nacionalidadeLocatario: yup.string().required("Este campo é obrigatório"),
 });
 
-export default function Form() {
+export default function FormCaucao() {
   const [message, setmessage] = useState("");
   const [messageError, setMessageError] = useState("");
   const [baixarPdf, setBaixarPdf] = useState("");
@@ -77,7 +77,7 @@ export default function Form() {
 
   const sendData = async (data) =>
     api
-      .post("/pdf", data)
+      .post("/contrato-aluguel-caucao", data)
       .then((response) => {
         setmessage(response.data);
         setBaixarPdf("Baixar PDF");

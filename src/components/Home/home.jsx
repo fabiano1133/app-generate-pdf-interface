@@ -14,10 +14,10 @@ export function Home() {
           <div className="card-options">
             <h2>Qual o tipo de contrato que você precisa?</h2>
             <div className="options">
-              <NavLink to="" className="btn-option">
+              <NavLink to="/form-fiador" className="btn-option">
                 ALUGUEL COM FIADOR
               </NavLink>
-              <NavLink to="/form" className="btn-option">
+              <NavLink to="/form-caucao" className="btn-option">
                 ALUGUEL COM CAUÇÃO
               </NavLink>
               <NavLink className="btn-option">COMPRA E VENDA</NavLink>
