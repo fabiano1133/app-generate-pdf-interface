@@ -6,7 +6,7 @@ export function Home() {
     <>
       <div className="container">
         <div className="container">
-          <h1 className="title">Seja bem vindo</h1>
+          <h1 className="title">Seja bem vindo!</h1>
           <h2 className="subTitle">Gere contratos de forma simples</h2>
         </div>
 
@@ -20,7 +20,9 @@ export function Home() {
               <NavLink to="/form-caucao" className="btn-option">
                 ALUGUEL COM CAUÇÃO
               </NavLink>
-              <NavLink className="btn-option">COMPRA E VENDA</NavLink>
+              <NavLink to="/404" className="btn-option">
+                COMPRA E VENDA
+              </NavLink>
             </div>
           </div>
         </div>
