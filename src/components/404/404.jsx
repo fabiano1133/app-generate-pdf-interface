@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.css";
 import image from "../../../src/assets/images/construction-svgrepo-com.svg";
+import "./style.css";
 
 export function NotFound() {
   return (

@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./components/Home/Home.jsx";
+import { Home } from "../src/components/Home/Home";
 import FormCaucao from "../src/components/Form-Caucao/Form-caucao.jsx";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
