@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { NavLink } from "react-router-dom";
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <div className="container">
